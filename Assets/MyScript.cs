@@ -17,11 +17,11 @@ public class MyScript : MonoBehaviour
     public Camera cam;
     public bool pulscolor;
      
-    
     // Variablar ovanför som jag använder i koden istället för att använda massa värden.
-    void Start()
+    
+    void Start() //void Start gör så att funktionerna startas precis när spelet startas.
     {
-        InvokeRepeating("Timer", repeating, repeating); //Händer bara varje sekund
+        InvokeRepeating("Timer", repeating, repeating); //Gör så att timern visas varje sekund. ekvationen repeteras alltså varje sekund.
         transform.position = new Vector3(Random.Range(-cordx, cordx), Random.Range(-cordy, cordy)); //Skeppet spawnar på en random position när jag startar spelet
         cam = Camera.main;
         randomspeed = Random.Range(3f, 10f); //Gör en variabel för random movespeed så att hastigheten blir random.
@@ -32,7 +32,7 @@ public class MyScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update() //void Update gör så att mina funktioner repeteras.
     {
 
 
@@ -84,7 +84,7 @@ public class MyScript : MonoBehaviour
         }
     }
 
-    void Timer()
+    void Timer() //en egen void funktion för min Timer.
     {
         timer += 1;
         Debug.Log(string.Format("Timer: {0}", timer));
